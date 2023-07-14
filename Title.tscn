@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="TitleCenterContainer" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 0.044
+margin_top = -0.200001
+margin_right = 0.0479736
+margin_bottom = 0.199997
+
+[node name="TitlePanel" type="Panel" parent="."]
+margin_left = 512.0
+margin_top = 13.0
+margin_right = 512.0
+margin_bottom = 13.0
+
+[node name="TitleLabel" type="Label" parent="TitlePanel"]
+margin_left = -53.0
+margin_top = -8.0
+margin_right = 52.0
+margin_bottom = 6.0
+text = "Ooga Booga Idle"
+align = 1
+valign = 1
