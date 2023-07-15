@@ -16,15 +16,14 @@ public class Resource : Node
     float resourceAmount;
 
     [Signal]
-    public delegate void ProducedEventHandler(float newResourceValue);
+    public delegate void ResourceAmountChangedEventHandler(float newResourceValue);
 
     public void produce(){
         resourceAmount += productionPerWorker * numberOfWorkers;
-        //EmitSignal("Produced", resourceAmount);
+        EmitSignal("ResourceAmountChangedEventHandler", resourceAmount);
     }
     
     private void _on_TickTimer_timeout(){
         produce();
-        GD.Print("produced");
     }
 }

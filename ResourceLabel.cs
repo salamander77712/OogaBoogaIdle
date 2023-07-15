@@ -17,4 +17,8 @@ public class ResourceLabel : Label
         resourceValue = newResouceValue;
         Text = resourceName + ": " + resourceValue;
     }
+
+    private void OnResourceAmountChanged(float newResouceValue){
+        updateLabel(newResouceValue);
+    }
 }

@@ -29,7 +29,19 @@ margin_left = 4.0
 margin_right = 4.0
 resourceName = "Food"
 
-[node name="LandResource" parent="." instance=ExtResource( 3 )]
+[node name="Resources" type="Node" parent="."]
+
+[node name="LandResource" parent="Resources" instance=ExtResource( 3 )]
 resourceName = "Land"
 productionPerWorker = 1.0
 numberOfWorkers = 1
+
+[node name="FoodResource" parent="Resources" instance=ExtResource( 3 )]
+resourceName = "Food"
+productionPerWorker = 0.5
+numberOfWorkers = 1
+
+[connection signal="timeout" from="TickTimer" to="Resources/LandResource" method="_on_TickTimer_timeout"]
+[connection signal="timeout" from="TickTimer" to="Resources/FoodResource" method="_on_TickTimer_timeout"]
+[connection signal="ResourceAmountChangedEventHandler" from="Resources/LandResource" to="ResourceLabelsGridContainer/LandResourceLabel" method="OnResourceAmountChanged"]
+[connection signal="ResourceAmountChangedEventHandler" from="Resources/FoodResource" to="ResourceLabelsGridContainer/FoodResourceLabel" method="OnResourceAmountChanged"]
