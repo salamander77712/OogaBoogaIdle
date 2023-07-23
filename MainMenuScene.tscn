@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Title.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ResourceLabel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resource.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Population.cs" type="Script" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -40,6 +41,9 @@ numberOfWorkers = 1
 resourceName = "Food"
 productionPerWorker = 0.5
 numberOfWorkers = 1
+
+[node name="Population" type="Node" parent="."]
+script = ExtResource( 4 )
 
 [connection signal="timeout" from="TickTimer" to="Resources/LandResource" method="_on_TickTimer_timeout"]
 [connection signal="timeout" from="TickTimer" to="Resources/FoodResource" method="_on_TickTimer_timeout"]
